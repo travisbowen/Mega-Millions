@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import LatestNumbers from "./components/LatestNumbers";
+import PermanentDrawer from "./components/PermanentDrawer";
 
 function App() {
 	const [data, setData] = useState([]);
@@ -25,12 +27,10 @@ function App() {
 	// data.multiplier
 	// data.winning_numbers
 	return (
-		<div className='App'>
-			{data
-				? data.map((drawing) => {
-						return <h1>{drawing.winning_numbers}</h1>;
-				  })
-				: "Loading..."}
+		<div className='app'>
+			<PermanentDrawer />
+			<h1>Hi</h1>
+			{data ? <LatestNumbers data={data[0]} /> : <CircularProgress />}
 		</div>
 	);
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import "./LatestNumbers.css";
 
 const LatestNumbers = ({ data }) => {
 	return (

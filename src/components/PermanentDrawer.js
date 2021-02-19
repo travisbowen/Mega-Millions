@@ -1,5 +1,4 @@
 import React from "react";
-import "./PermanentDrawer.css";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
 import Drawer from "@material-ui/core/Drawer";

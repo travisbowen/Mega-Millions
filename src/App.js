@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import LatestNumbers from "./components/LatestNumbers";
 import PermanentDrawer from "./components/PermanentDrawer";

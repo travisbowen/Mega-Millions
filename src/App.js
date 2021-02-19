@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
+import "./styles/app.scss";
 import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import LatestNumbers from "./components/LatestNumbers";
-import PermanentDrawer from "./components/PermanentDrawer";
+import Drawer from "./components/Drawer";
 
 function App() {
 	const [data, setData] = useState([]);
+	const [items, setItems] = useState([
+		"Winning Numbers",
+		"Last Month Numbers",
+		"Last Year Numbers",
+		"All Time Numbers",
+		"Random Number Generator",
+		"Prize Pool",
+	]);
 
 	useEffect(() => {
 		// Pulls in past drawings as json data
@@ -28,9 +37,9 @@ function App() {
 	// data.winning_numbers
 	return (
 		<div className='app'>
-			<PermanentDrawer />
+			<Drawer items={items} />
 			<h1>Mega Millions Lotto Tracker</h1>
-			{data ? <LatestNumbers data={data[0]} /> : <CircularProgress />}
+			{/* {data ? <LatestNumbers data={data[0]} /> : <CircularProgress />} */}
 		</div>
 	);
 }

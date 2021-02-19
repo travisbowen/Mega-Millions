@@ -1,7 +1,8 @@
-import axios from "axios";
+// Functions that we will probably need
+// Date converter from 2021-02-16T00:00:00.000 to
 
-export const retrieveData = () => {
-	axios.get(`https://data.ny.gov/resource/5xaw-6ayf.json`).then((res) => {
-		console.log(res.data);
-	});
-};
+// Filter by all time
+
+// Filter by year
+
+// Filter by month

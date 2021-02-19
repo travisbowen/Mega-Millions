@@ -1,3 +1,41 @@
-.permanent_drawer {
+.drawer {
+	position: fixed;
 	background: #0e4380;
+	top: 0;
+	left: 0;
+	padding-top: 4rem;
+	padding-left: 2rem;
+	width: 30rem;
+	height: 100%;
+	box-shadow: 2px 2px 50px rgb(14, 67, 128);
+	h2 {
+		padding: 2rem;
+	}
+}
+
+.drawer-item {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 2rem 2rem 2rem 2rem;
+	h3 {
+		font-size: 1.6rem;
+	}
+	&:hover {
+		h3 {
+			color: yellow;
+		}
+	}
+}
+
+.selected {
+	h3 {
+		color: yellow;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.library {
+		width: 100%;
+	}
 }

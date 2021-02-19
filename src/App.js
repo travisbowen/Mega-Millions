@@ -12,8 +12,8 @@ function App() {
 		retrieveLottoData();
 	}, []);
 
-	const retrieveLottoData = () => {
-		axios
+	const retrieveLottoData = async () => {
+		await axios
 			.get(`https://data.ny.gov/resource/5xaw-6ayf.json`)
 			.then((res) => {
 				setData(res.data);
@@ -29,7 +29,7 @@ function App() {
 	return (
 		<div className='app'>
 			<PermanentDrawer />
-			<h1>Hi</h1>
+			<h1>Mega Millions Lotto Tracker</h1>
 			{data ? <LatestNumbers data={data[0]} /> : <CircularProgress />}
 		</div>
 	);

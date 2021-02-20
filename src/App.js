@@ -18,17 +18,18 @@ function App() {
 
 	useEffect(() => {
 		// Pulls in past drawings as json data
+		const retrieveLottoData = async () => {
+			await axios
+				.get(`https://data.ny.gov/resource/5xaw-6ayf.json`)
+				.then((res) => {
+					setData(res.data);
+					console.log(data);
+				})
+				.catch((error) => console.log(error));
+		};
+
 		retrieveLottoData();
 	}, []);
-
-	const retrieveLottoData = async () => {
-		await axios
-			.get(`https://data.ny.gov/resource/5xaw-6ayf.json`)
-			.then((res) => {
-				setData(res.data);
-			})
-			.catch((error) => console.log(error));
-	};
 
 	// data in Array
 	// data.draw_date
@@ -37,9 +38,13 @@ function App() {
 	// data.winning_numbers
 	return (
 		<div className='app'>
-			<Drawer items={items} />
+			{/* <Drawer items={items} /> */}
 			<h1>Mega Millions Lotto Tracker</h1>
-			{/* {data ? <LatestNumbers data={data[0]} /> : <CircularProgress />} */}
+			{data && data.length > 0 ? (
+				<LatestNumbers data={data[0]} />
+			) : (
+				"...Loading"
+			)}
 		</div>
 	);
 }

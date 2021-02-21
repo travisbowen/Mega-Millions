@@ -1,0 +1,36 @@
+.balls-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.numberCircle {
+	border-radius: 50%;
+	width: 10rem;
+	height: 10rem;
+	padding: 3rem;
+
+	background: #fff;
+	color: #000;
+	text-align: center;
+
+	box-shadow: 0 0 20px #8b8b8b inset;
+
+	font: 32px Arial, sans-serif;
+	font-weight: bold;
+}
+
+.numberCircle-multiplier {
+	border-radius: 50%;
+	width: 10rem;
+	height: 10rem;
+	padding: 3rem;
+
+	background: #fddd0c;
+	color: #000;
+	text-align: center;
+
+	box-shadow: 0 0 20px #8b8b8b inset;
+
+	font: 32px Arial, sans-serif;
+	font-weight: bold;
+}

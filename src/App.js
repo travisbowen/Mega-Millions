@@ -23,7 +23,6 @@ function App() {
 				.get(`https://data.ny.gov/resource/5xaw-6ayf.json`)
 				.then((res) => {
 					setData(res.data);
-					console.log(data);
 				})
 				.catch((error) => console.log(error));
 		};
@@ -38,8 +37,8 @@ function App() {
 	// data.winning_numbers
 	return (
 		<div className='app'>
-			{/* <Drawer items={items} /> */}
-			<h1>Mega Millions Lotto Tracker</h1>
+			<h1>Mega Millions Statistics</h1>
+			<Drawer items={items} />
 			{data && data.length > 0 ? (
 				<LatestNumbers data={data[0]} />
 			) : (

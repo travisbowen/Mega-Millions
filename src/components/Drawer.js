@@ -6,7 +6,7 @@ const Drawer = ({ items }) => {
 		<div className='drawer'>
 			<div className='drawer_items'>
 				{items.map((item) => {
-					return <DrawerItem item={item} />;
+					return <DrawerItem key={item} item={item} />;
 				})}
 			</div>
 		</div>

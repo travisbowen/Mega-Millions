@@ -6,11 +6,11 @@ const Balls = ({ numbers, multiplier }) => {
 	return (
 		<div className='balls-container'>
 			{numArray.map((number) => (
-				<div key={number} className='numberCircle'>
+				<div key={number} className='number-circle'>
 					{number}
 				</div>
 			))}
-			<div className='numberCircle-multiplier'>{multiplier}</div>
+			<div className='number-circle-multiplier'>{multiplier}</div>
 		</div>
 	);
 };

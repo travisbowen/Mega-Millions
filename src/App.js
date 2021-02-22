@@ -4,6 +4,7 @@ import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import LatestNumbers from "./components/LatestNumbers";
 import Drawer from "./components/Drawer";
+import PrizePool from "./components/PrizePool";
 
 function App() {
 	const [data, setData] = useState([]);
@@ -39,11 +40,12 @@ function App() {
 		<div className='app'>
 			<h1>Mega Millions Statistics</h1>
 			<Drawer items={items} />
-			{data && data.length > 0 ? (
+			<PrizePool />
+			{/* {data && data.length > 0 ? (
 				<LatestNumbers data={data[0]} />
 			) : (
 				"...Loading"
-			)}
+			)} */}
 		</div>
 	);
 }

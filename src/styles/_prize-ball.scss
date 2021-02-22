@@ -1,0 +1,27 @@
+.balls-container {
+	display: flex;
+}
+
+.ball {
+	border-radius: 50%;
+	width: 4rem;
+	height: 4rem;
+	padding: 1rem;
+	border: 0.1rem solid gray;
+
+	background: #fff;
+
+	box-shadow: 0 0 20px #8b8b8b inset;
+}
+
+.ball-yellow {
+	border-radius: 50%;
+	width: 4rem;
+	height: 4rem;
+	padding: 1rem;
+	border: 0.1rem solid gray;
+
+	background: #fddd0c;
+
+	box-shadow: 0 0 20px #8b8b8b inset;
+}

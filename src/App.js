@@ -41,11 +41,11 @@ function App() {
 			<h1>Mega Millions Statistics</h1>
 			<Drawer items={items} />
 			<PrizePool />
-			{data && data.length > 0 ? (
+			{/* {data && data.length > 0 ? (
 				<LatestNumbers data={data[0]} />
 			) : (
 				"...Loading"
-			)}
+			)} */}
 		</div>
 	);
 }

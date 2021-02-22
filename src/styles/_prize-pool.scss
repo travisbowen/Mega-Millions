@@ -1,0 +1,26 @@
+table {
+	background: #fff;
+	border-radius: 2rem;
+	border-collapse: collapse;
+}
+
+.column1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem;
+}
+
+th {
+	height: 6rem;
+	width: 33.3%;
+	font-size: 1.8rem;
+	font-weight: bolder;
+}
+
+td {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 500;
+	border-top: 1px solid gray;
+}

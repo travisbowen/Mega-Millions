@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DrawerItem = ({ item }) => {
 	return (
 		<div className='drawer-item'>
 			<h3>
-				<a href={item.route}>{item.title}</a>
+				<Link to={item.route}>{item.title}</Link>
 			</h3>
 		</div>
 	);

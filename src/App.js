@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/app.scss";
 import axios from "axios";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import LatestNumbers from "./components/LatestNumbers";
 import Drawer from "./components/Drawer";
@@ -38,24 +38,20 @@ function App() {
 	// data.multiplier
 	// data.winning_numbers
 	return (
-		<div className='app'>
-			<h1>Mega Millions Statistics</h1>
-			<Drawer items={items} />
-			<BrowserRouter>
+		<Router>
+			<div className='app'>
+				<h1>Mega Millions Statistics</h1>
+				<Drawer items={items} />
 				<Switch>
 					<Route path='/latest'>
-						{data && data.length > 0 ? (
-							<LatestNumbers data={data[0]} />
-						) : (
-							"...Loading"
-						)}
+						<LatestNumbers data={data[0]} />
 					</Route>
 					<Route path='/prize'>
 						<PrizePool />
 					</Route>
 				</Switch>
-			</BrowserRouter>
-		</div>
+			</div>
+		</Router>
 	);
 }
 

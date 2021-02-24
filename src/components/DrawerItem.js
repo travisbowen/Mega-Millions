@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DrawerItem = ({ item }) => {
 	return (
 		<div className='drawer-item'>
-			<h3>{item}</h3>
+			<h3>
+				<Link to={item.route}>{item.title}</Link>
+			</h3>
 		</div>
 	);
 };

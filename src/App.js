@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/app.scss";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -6,6 +6,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import LatestNumbers from "./components/LatestNumbers";
 import Drawer from "./components/Drawer";
 import PrizePool from "./components/PrizePool";
+import {dateConverter} from "./util.js"
 
 function App() {
 	const [data, setData] = useState([]);
@@ -30,7 +31,8 @@ function App() {
 		};
 
 		retrieveLottoData();
-	}, []);
+		dateConverter(data);
+	},[]);
 
 	// data in Array
 	// data.draw_date
@@ -53,6 +55,6 @@ function App() {
 			</div>
 		</Router>
 	);
-}
+};
 
 export default App;

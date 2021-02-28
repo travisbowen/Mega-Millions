@@ -6,7 +6,9 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import LatestNumbers from "./components/LatestNumbers";
 import Drawer from "./components/Drawer";
 import PrizePool from "./components/PrizePool";
-import {dateConverter} from "./util.js"
+import Sort from "./components/Sort";
+import {allTimeSort} from "./util.js"
+
 
 function App() {
 	const [data, setData] = useState([]);
@@ -29,11 +31,11 @@ function App() {
 				})
 				.catch((error) => console.log(error));
 		};
-
+		
 		retrieveLottoData();
-		dateConverter(data);
 	},[]);
 
+	
 	// data in Array
 	// data.draw_date
 	// data.mega_ball
@@ -43,14 +45,19 @@ function App() {
 		<Router>
 			<div className='app'>
 				<h1>Mega Millions Statistics</h1>
+				
 				<Drawer items={items} />
 				<Switch>
-					<Route path='/latest'>
-						<LatestNumbers data={data[0]} />
-					</Route>
+					<Route path='/all'>
+						<Sort data={data}/>
+					</Route>	
 					<Route path='/prize'>
 						<PrizePool />
 					</Route>
+					<Route path='/latest'>
+						<LatestNumbers data={data[0]} />
+					</Route>
+					
 				</Switch>
 			</div>
 		</Router>
